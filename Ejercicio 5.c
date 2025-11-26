@@ -19,14 +19,16 @@ void setup() {
 
 //========================
 void loop() {
-  cargarLista(pLista, N);   // Cargar lista al inicio
-  delay(3000);
+   int M; // En esta variable voy a guardat la posicion del dato que quiero saber
+  int valor; //En esta variable guardamos el contenido de la posicion M de la lista 
+  cargarLista(pLista, N);
+  delay(2000);
   // Mostrar lista completa
   mostrarLista(pLista, N);
 
   // Ejemplo: obtener el dato en la posición M
-  int M = 3; // posición que queremos consultar
-  int valor = obtenerDato(pLista, N, M);
+   M = 3; // posición que queremos consultar
+   valor = obtenerDato(pLista, N, M);
 
   if (valor != -1) {
     Serial.print("El valor en la posicion ");
@@ -96,3 +98,4 @@ bool modificarDato(int* pLista, int N, int M, int nuevoValor) {
   }
 }
 //Hecho por Matias Pinto
+
