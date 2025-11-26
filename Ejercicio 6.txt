@@ -1,0 +1,79 @@
+//Programación Dispositivos Electronicos 
+//Profesor: Jorge Graña
+// Facundo Tiburcio, Matias Pinto, Lautaro Scheffer.
+
+#define N 10
+int lista[N];
+int valor = 0;
+int M, Q;
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Inserta 10 numeros:");
+}
+//=======================================
+
+//=======================================
+void loop() {
+  cargarLista(lista, N);
+  MostrarLista(lista, N);
+
+  // Pedimos posición M
+  Serial.println("Ingresa la posicion M a intercambiar:");
+  while (Serial.available() == 0);
+  M = Serial.parseInt();
+
+  // Pedimos posición Q
+  Serial.println("Ingresa la posicion Q a intercambiar:");
+  while (Serial.available() == 0);
+  Q = Serial.parseInt();
+
+  // Llamada a la función parametrizable
+  intercambiar(lista, M, Q);
+
+  Serial.println("Lista luego del intercambio:");
+  MostrarLista(lista, N);
+
+  while(true);
+}
+//=======================================
+
+//=======================================
+// Cargar lista
+void cargarLista(int lista[], int n) {
+  int i;
+  for (i = 0 ; i < n; i++) {
+    Serial.print("numero ");
+    valor++;
+    Serial.print(valor);
+    Serial.print(": ");
+
+    while (Serial.available() == 0);
+    lista[i] = Serial.parseInt();
+    Serial.println(lista[i]);
+  }
+  Serial.println("lista numeros:");
+}
+//=======================================
+
+//=======================================
+// Mostrar lista
+void MostrarLista(int lista[], int n) {
+  int i;
+  for (i = 0; i < n; i++) {
+    Serial.print(lista[i]);
+    Serial.print(" ");
+  }
+  Serial.println();
+}
+//=======================================
+
+//=======================================
+//Función parametrizable: intercambiar M y Q
+void intercambiar(int lista[], int M, int Q) {
+  int temp;
+
+  temp = lista[M];
+  lista[M] = lista[Q];
+  lista[Q] = temp;
+}
