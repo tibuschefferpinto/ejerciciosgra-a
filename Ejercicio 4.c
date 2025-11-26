@@ -70,4 +70,5 @@ int obtenerDato(int* pLista, int N, int M) {
     return -1;          // error si está fuera de rango
   }
 }
+
 //hecho por Facundo Tiburcio
