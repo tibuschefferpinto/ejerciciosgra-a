@@ -77,3 +77,5 @@ void intercambiar(int lista[], int M, int Q) {
   lista[M] = lista[Q];
   lista[Q] = temp;
 }
+
+//Hecho por Lautaro Scheffer//
