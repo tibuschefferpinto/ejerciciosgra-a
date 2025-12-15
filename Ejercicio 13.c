@@ -65,8 +65,10 @@ void mostrarLista(int* pLista, int N) {
 // Ordenar lista en forma ascendente
 void ordenarListaAsc(int* pLista, int N) {
   int temp;
-  for (int i = 0; i < N - 1; i++) {
-    for (int j = 0; j < N - i - 1; j++) {
+  int i;
+  int j;
+  for (i = 0; i < N - 1; i++) {
+    for (j = 0; j < N - i - 1; j++) {
       if (pLista[j] > pLista[j + 1]) {
         temp = pLista[j];
         pLista[j] = pLista[j + 1];
