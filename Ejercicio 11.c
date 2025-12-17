@@ -76,3 +76,4 @@ int borrarRepetidos(int pLista[], int n) {
   return n;   // devuelve los num
 }
 //=======================================
+//Hecho por Matias Pinto
